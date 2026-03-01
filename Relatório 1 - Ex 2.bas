@@ -11,3 +11,4 @@ while resposta <> senha
 wend
 
 print "Acesso Liberado!"
+sleep
