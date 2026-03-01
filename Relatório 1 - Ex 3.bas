@@ -9,3 +9,4 @@ print "Convertendo..."
 print "Seu dinheiro em Reais: ", reais
 print "Em Dolar: "; USING "##.##"; conversao/5
 print "Em Euro: "; USING "##.##"; conversao/5.40
+sleep
