@@ -1,0 +1,97 @@
+using System;
+using System.Collections.Generic;
+
+class ReliquiaMagica
+{
+    public string NomeItem { get; set; }
+
+    public ReliquiaMagica(string nome)
+    {
+        NomeItem = nome;
+    }
+}
+
+class BauDeReliquias
+{
+    private List<ReliquiaMagica> reliquias;
+
+    public BauDeReliquias()
+    {
+        reliquias = new List<ReliquiaMagica>();
+    }
+
+    public void GuardarItem(ReliquiaMagica item)
+    {
+        reliquias.Add(item);
+    }
+
+    public void ListarReliquias()
+    {
+        Console.WriteLine("Relíquias no Baú:");
+        foreach (var r in reliquias)
+        {
+            Console.WriteLine("- " + r.NomeItem);
+        }
+    }
+}
+
+class ItemDeAcampamento
+{
+    public string Nome { get; set; }
+
+    public ItemDeAcampamento(string nome)
+    {
+        Nome = nome;
+    }
+}
+
+class Maga
+{
+    public string Nome { get; set; }
+
+    public BauDeReliquias Bau { get; private set; }
+
+    public List<ItemDeAcampamento> ItensAcampamento { get; set; }
+
+    public Maga(string nome, List<ItemDeAcampamento> itens)
+    {
+        Nome = nome;
+        Bau = new BauDeReliquias();
+        ItensAcampamento = itens;   
+    }
+
+    public void AdicionarReliquia(string nomeItem)
+    {
+        Bau.GuardarItem(new ReliquiaMagica(nomeItem));
+    }
+
+    public void MostrarItensAcampamento()
+    {
+        Console.WriteLine("Itens de Acampamento de " + Nome + ":");
+        foreach (var item in ItensAcampamento)
+        {
+            Console.WriteLine("- " + item.Nome);
+        }
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        List<ItemDeAcampamento> itens = new List<ItemDeAcampamento>()
+        {
+            new ItemDeAcampamento("Saco de Dormir"),
+            new ItemDeAcampamento("Pote de Cozinha")
+        };
+
+        Maga fern = new Maga("Fern", itens);
+
+        fern.AdicionarReliquia("Anel de Prata");
+        fern.AdicionarReliquia("Grimório Antigo");
+
+        fern.MostrarItensAcampamento();
+        Console.WriteLine();
+        fern.Bau.ListarReliquias();
+    }
+}
