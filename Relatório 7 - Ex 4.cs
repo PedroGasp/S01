@@ -1,0 +1,57 @@
+using System;
+using System.Collections.Generic;
+
+namespace HorrorMiskatonic
+{
+    public abstract class AbominacaoCosmica
+    {
+        public string Nome { get; set; }
+
+        protected AbominacaoCosmica(string nome)
+        {
+            Nome = nome;
+        }
+
+        public abstract void Manifestar();
+    }
+    
+    public class Shoggoth : AbominacaoCosmica
+    {
+        public Shoggoth(string nome) : base(nome) { }
+
+        public override void Manifestar()
+        {
+            Console.WriteLine($"{Nome}: A massa de protoplasma se arrasta borbulhando, moldando órgãos e olhos conforme avança.");
+        }
+    }
+
+    public class CacadorAlado : AbominacaoCosmica
+    {
+        public CacadorAlado(string nome) : base(nome) { }
+
+        public override void Manifestar()
+        {
+            Console.WriteLine($"{Nome}: A criatura bate suas asas membranosas, mergulhando do vácuo estelar em um voo silencioso.");
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            List<AbominacaoCosmica> bibliotecaMiskatonic = new List<AbominacaoCosmica>();
+
+            bibliotecaMiskatonic.Add(new Shoggoth("Shoggoth Ancestral"));
+            bibliotecaMiskatonic.Add(new CacadorAlado("Morte Alada"));
+
+            Console.WriteLine("--- Relatos da Biblioteca de Miskatonic ---\n");
+
+            foreach (var horror in bibliotecaMiskatonic)
+            {
+                horror.Manifestar();
+            }
+
+            Console.ReadKey();
+        }
+    }
+}
