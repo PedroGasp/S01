@@ -27,13 +27,13 @@ class Joker:
 
 
 if __name__ == "__main__":
-    m1 = PhantomThieves("Ryuji", "Bastão")
-    m2 = PhantomThieves("Ann", "Chicote")
-    m3 = PhantomThieves("Yusuke", "Katana")
+    m1 = PhantomThieves("Ryuji", "Imprisoned Mjolnir")
+    m2 = PhantomThieves("Ann", "Dainaraka Whip")
+    m3 = PhantomThieves("Makoto", "Vajra")
 
     equipe = [m1, m2, m3]
 
-    joker = Joker("Faca", equipe)
+    joker = Joker("Punish Dagger", equipe)
 
     joker.mostrar_equipe()
 
