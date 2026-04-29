@@ -1,70 +1,42 @@
-class Musico
-  attr_accessor :nome, :instrumento
+class BebidaAfterlife
+  attr_accessor :nome, :custo_base
 
-  def initialize(nome, instrumento)
+  def initialize(nome, custo_base)
     @nome = nome
-    @instrumento = instrumento
+    @custo_base = custo_base
   end
 
-  def tocar_partitura(obra)
-    raise NotImplementedError, "Este método deve ser implementado pelas subclasses"
+  def preco_total
+    @custo_base
   end
-end
-
-class Pianista < Musico
-  def initialize(nome)
-    super(nome, "Piano")
-  end
-
-  def tocar_partitura(obra)
-    puts "#{@nome} toca #{obra} no #{@instrumento} com notas suaves."
+  
+  def to_string
+    "Bebida: #{@nome} | Valor Final: $#{preco_total}"
   end
 end
 
-class Violinista < Musico
-  def initialize(nome)
-    super(nome, "Violino")
+class DrinkIconico < BebidaAfterlife
+  attr_accessor :nivel_notoriedade
+
+  def initialize(nome, custo_base, nivel_notoriedade)
+    super(nome, custo_base)
+    @nivel_notoriedade = nivel_notoriedade
   end
 
-  def tocar_partitura(obra)
-    puts "#{@nome} executa #{obra} no #{@instrumento} com intensidade."
-  end
-end
-
-class Maestro
-  def initialize
-    @musicos = []
+  def preco_total
+    @custo_base + (@nivel_notoriedade * 8)
   end
 
-  def adicionar_musico(musico)
-    @musicos << musico
-  end
-
-  def iniciar_concerto(obra)
-    puts "Iniciando a obra: #{obra}"
-    @musicos.each do |musico|
-      musico.tocar_partitura(obra)
-    end
-  end
-
-  def ajustar_postura(estado)
-    @musicos.map do |musico|
-      "#{musico.nome} está em ritmo #{estado}!"
-    end
+  def to_string
+    "Bebida: #{@nome} | Valor Final: $#{preco_total} (Notoriedade: #{@nivel_notoriedade})"
   end
 end
 
-maestro = Maestro.new
+drinks = []
+drinks << DrinkIconico.new("Soul Fire", 20, 3)
+drinks << DrinkIconico.new("Eternal Frost", 15, 5)
+drinks << DrinkIconico.new("Phantom Whisper", 10, 2)
 
-p1 = Pianista.new("Kosei Arima")
-v1 = Violinista.new("Kaori Miyazono")
-
-maestro.adicionar_musico(p1)
-maestro.adicionar_musico(v1)
-
-obra = "Balada da Primavera"
-
-maestro.iniciar_concerto(obra)
-
-puts "\nAjuste de postura:"
-puts maestro.ajustar_postura("Allegro")
+drinks.each do |drink|
+  puts drink.to_string
+end
