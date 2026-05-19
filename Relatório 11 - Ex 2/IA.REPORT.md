@@ -1,4 +1,4 @@
-Identificação: Pedro Gasparotto Carvalho
+Identificação: Pedro Gasparotto Carvalho - 655
 
 Histórico de Prompts: Assim como o primeiro exercicio mandei imagens do problema para a IA resolver, como ela já sabia do que eu queria por conta do outro arquivo não dei nenhuma instrução extra.
 
