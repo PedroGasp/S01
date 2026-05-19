@@ -135,4 +135,5 @@ Bem-vindo ao Leblanc! Sente-se e aproveite o aroma do café.
 - Leblanc Special Blend: R$ 15,50
 - Café com Leite: R$ 7,50
 
-Relatório de Satisfação e Aprendizado: Assim que coloquei o código no one OneCompiler recebi várias mensagens de erros praticamento identicos. 
+Relatório de Satisfação e Aprendizado: Assim que coloquei o código no one OneCompiler recebi várias mensagens de erros praticamento identicos mas em linhas diferentes.(Cafe.java:25: error: class CafeGourmet is public, should be declared in a file named CafeGourmet.java
+public class CafeGourmet extends Cafe). Considerando isso, fica nítido que a IA fez o código com a intenção de ser colocado em arquivos separados ao invés de um só, o que resultou nesse erro. Percebi isso por causa, obviamente, da mensagem de erro e também da quantidade de 'public' em todas a funções principais, que não ocorreria problemas se estivessem em arquivos separados. Com isso em mente e usando o código do primeiro exercicio como 'guia', consegui consertar o problem tirando todos os 'public', exceto o 'public' da Main, resolvendo o problema e resultando na saída esperada. Não foi um problema dificil de resolver, mas mostra mais uma vez a importancia de olhar o código e compreeder os tipos de erros que podem aparecer quando é feito por IA.
