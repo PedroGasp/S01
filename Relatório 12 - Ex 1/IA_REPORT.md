@@ -118,6 +118,7 @@ Com Eq, podemos fazer:
 
 Aberto == Aberto      -- True
 Aberto == Cancelado   -- False
+
 3. Tipo Pedido
 data Pedido = Pedido
     { bebidas :: [Bebida]
