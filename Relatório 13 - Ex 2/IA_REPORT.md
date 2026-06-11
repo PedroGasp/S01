@@ -1,4 +1,4 @@
-Identificação: Pedro Gasparotto Carvalho
+Identificação: Pedro Gasparotto Carvalho - 655
 
 Histórico de Prompts:Tirei uma print do exercício e pedi pro Gemini: Faça esse código em lisp e explique detalhadamente cada parte dele. Especialmente a parte de verificar o local e o perigo da criatura.
 
