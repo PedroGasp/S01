@@ -100,7 +100,7 @@ competidores_diretos(A, B) :-
     alimenta(terra, A),
     alimenta(sol, B),
     alimenta(terra, B),
-    A \= B. % Garante que uma planta não é competidora de si mesma
+    A \= B.
 
 % Query 3: 
 % ?- competidores_diretos(X, Y).
